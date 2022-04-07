@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   get '/search', to: 'search#index'
   post '/search', to: 'congress#search'

@@ -1,8 +1,12 @@
-WELCOME!
 
-<%= link_to "Register", '/register' %>
-<%= link_to "Log In", '/login' %>
+<% if current_user %>
+  <%= link_to "Logout", "/logout", method: :delete %>
+<% else %>
+  <%= link_to "Register", '/register' %>
+  <%= link_to "Log In", '/login' %>
+<% end %>
 
+<br>WELCOME!
 <%= form_with url: '/register', local: true do |form| %>
   <%= form.label :email %>
   <%= form.text_field :email, required: true %><br>
