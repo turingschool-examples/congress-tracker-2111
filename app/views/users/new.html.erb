@@ -1,0 +1,14 @@
+WELCOME!
+
+<%= link_to "Register", '/register' %>
+<%= link_to "Log In", '/login' %>
+
+<%= form_with url: '/register', local: true do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email, required: true %><br>
+  <%= form.label :password %>
+  <%= form.password_field :password, required: true %><br>
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation, required: true %><br>
+  <%= form.submit "Register"%>
+<% end %>
