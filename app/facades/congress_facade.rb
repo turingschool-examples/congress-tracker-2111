@@ -10,6 +10,7 @@ class CongressFacade
   def self.senate_search(query)
     member_data = CongressService.senate
 
+    # binding.pry
     members = member_data[:results][0][:members]
     found_members = members.find_all { |m| m[:last_name] == query }
 

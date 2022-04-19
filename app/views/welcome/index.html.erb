@@ -14,6 +14,8 @@
 
 
 <% if @members %>
+<% cache "house members - #{@state}", expires_in: 15.seconds do %>
+<% binding.pry %>
   <h1><%=@members.size%> Results </h1>
   <% @members.each do |house_member| %>
     <ul class="house_members">
@@ -23,4 +25,6 @@
       <li class="district"><%= house_member.district%></li>
     </ul>
   <% end %>
+<% end %>
+<% binding.pry %>
 <% end %>
